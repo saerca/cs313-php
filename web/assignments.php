@@ -10,11 +10,8 @@
 
   <?php include('templates/footer.php') ?>
 
-<head>
-  <title>Assignments</title>
-</head>
-<body>
-  <div>Coming soon!</div>
+  <h2 class="main">Assignments</h2>
 
-</body>
+  <div class="main">Coming soon!</div>
+
 </html>

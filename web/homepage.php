@@ -10,5 +10,8 @@
 
   <?php include('templates/footer.php') ?>
 
-  <div>Welcome!</div>
+  <h2 class="main">Welcome!</h2>
+
+  <div class="main">Coming soon!</div>
+
 </html>
