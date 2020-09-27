@@ -12,6 +12,8 @@
 
   <h2 class="main">Welcome!</h2>
 
-  <div class="main">Coming soon!</div>
+  <img src="ukuleles.jpg" alt="ukuleles">
+
+  <div>Coming soon!</div>
 
 </html>

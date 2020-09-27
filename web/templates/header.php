@@ -2,7 +2,7 @@
   <title>Sam Castillo</title>
   <link rel="stylesheet" href="templates/samsite.css">
 </head>
-<body>
+<body class="main">
   <nav  class="header">
     <ul>
       <li><a href="/homepage.php">Home</a></li>
