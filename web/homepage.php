@@ -17,13 +17,13 @@
        var audio = document.getElementById("audio");
        audio.play();
      }
-    function stop(){
+    function pause(){
       var audio = document.getElementById("audio");
-      audio.stop();
+      audio.pause();
     }
   </script>
   <img src="ukuleles.jpg" alt="ukuleles" value="PLAY" onmouseover="play()"
-    onmouseout="stop()">
+    onmouseout="pause()">
   <audio id="audio" source src="ukulele.mp3" type="audio/mpeg"></audio>
 
   <div>My name is Sam. I'm a software engineering student. I love playing the ukulele.</div>
