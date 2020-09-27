@@ -14,6 +14,6 @@
 
   <img src="ukuleles.jpg" alt="ukuleles">
 
-  <div>Coming soon!</div>
+  <div>My name is Sam. I'm a software engineering student. I love playing the ukulele.</div>
 
 </html>
