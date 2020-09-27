@@ -13,12 +13,17 @@
   <h2 class="main">Welcome!</h2>
 
   <script>
-  function play(){
+    function play(){
        var audio = document.getElementById("audio");
        audio.play();
-  }
+     }
+    function stop(){
+      var audio = document.getElementById("audio");
+      audio.stop();
+    }
   </script>
-  <img src="ukuleles.jpg" alt="ukuleles" value="PLAY" onmouseover="play()">
+  <img src="ukuleles.jpg" alt="ukuleles" value="PLAY" onmouseover="play()"
+    onmouseout="stop()">
   <audio id="audio" source src="ukulele.mp3" type="audio/mpeg"></audio>
 
   <div>My name is Sam. I'm a software engineering student. I love playing the ukulele.</div>
