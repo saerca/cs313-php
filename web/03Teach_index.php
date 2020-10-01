@@ -8,12 +8,12 @@
   <head>
     <meta charset="utf-8">
     <title>Week 3 Team Activity</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="03Teach_styles.css">
   </head>
   <body>
     <h1>Week 3 Team Activity</h1>
-    
-    <form action="result.php" method="POST">
+
+    <form action="03Teach_results.php" method="POST">
       <label>Name:
         <input type="text" name="name">
       </label>
@@ -21,7 +21,7 @@
       <label>Email:
         <input type="text" name="email">
       </label>
-      
+
       <p>Major:</p>
       <?php
         foreach ($majors as $abbreviation => $name) {
@@ -32,7 +32,7 @@
       <label>Comments:
         <textarea name="comments"></textarea>
       </label>
-      
+
       <p>Continents visited:</p>
       <label>
         <input type="checkbox" name="continents[]" value="NA">
@@ -62,10 +62,10 @@
         <input type="checkbox" name="continents[]" value="An">
         Antarctica
       </label>
-      
-      
+
+
       <button type="submit">Submit</button>
     </form>
-    
+
   </body>
 </html>
