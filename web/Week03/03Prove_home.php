@@ -1,5 +1,14 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
+
+  <?php include('products.php') ?>
+
   <head>
     <meta charset="utf-8">
     <title>Week 3 Prove Shopping Cart</title>
