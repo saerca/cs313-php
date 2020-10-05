@@ -1,0 +1,27 @@
+/* 03Prove Stylesheet */
+
+.outer {
+	background-color: blue;
+	font-color: white;
+}
+
+.middle {
+	background-color: white;
+	font-color: black;
+}
+
+#div1 {
+	font-size: large;
+}
+
+#div2 {
+	font-size: medium;
+}
+
+#div3 {
+	font-size: small;
+}
+
+.embolden:hover {
+	font-weight: bold;
+}
