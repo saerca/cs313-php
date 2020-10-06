@@ -11,7 +11,7 @@ session_start();
 
   <head>
     <meta charset="utf-8">
-    <title>Week 3 Prove Shopping Cart</title>
+    <title>Week 03 Prove Shopping Cart</title>
     <link rel="stylesheet" href="03Prove_styles.css">
   </head>
   <body>
@@ -31,9 +31,7 @@ session_start();
             echo <tr>;
               echo <td> $items[$row][0] </td>;
               echo <td> $items[$row][1] </td>;
-              echo <input type="number" min="0" max="5">;
             echo </tr>;
-            echo <tr>;
           }
         ?>
       </tbody>
