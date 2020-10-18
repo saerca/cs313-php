@@ -34,13 +34,14 @@ catch (PDOException $ex)
   <h1>Songs by <?php echo $artist; ?></h1>
   <ul>
     <?php
-      $artistid = $db->prepare('SELECT artist_id FROM artist WHERE display_name = :name');
-      $artistid->bindValue(':name', $artist, PDO::PARAM_STR);
-      $artistid->execute();
-      $stmt = $db->prepare('SELECT title FROM song WHERE artist_id = :id');
-      $stmt->bindValue(':id', $artistid, PDO::PARAM_INT);
-      $stmt->execute();
-      while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+      $stmt1 = $db->prepare('SELECT artist_id FROM artist WHERE display_name = :name');
+      $stmt1->bindValue(':name', $artist, PDO::PARAM_STR);
+      $stmt1->execute();
+      $artistid = $stmt1->fetch(PDO::FETCH_ASSOC);
+      $stmt2 = $db->prepare('SELECT title FROM song WHERE artist_id = :id');
+      $stmt2->bindValue(':id', $artistid, PDO::PARAM_INT);
+      $stmt2->execute();
+      while ($row = $stmt2->fetch(PDO::FETCH_ASSOC))
       {
         echo '<li>' . $row[title] . '</li>';
       }
