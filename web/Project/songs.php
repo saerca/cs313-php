@@ -29,27 +29,22 @@ catch (PDOException $ex)
 
   <?php include('templates/header.php') ?>
 
-  <h1>Look Up Songs From Artist</h1>
-  <form action="songs.php" method="get">
-    <label for="artist">Choose Artist/Band:</label>
-    <select name="artist" id="artist">
-
-      <?php
-        $stmt = $db->query('SELECT display_name FROM artist');
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-        {
-          echo '<option>' . $row[display_name] . '</option>';
-        }
-      ?>
-    </select>
-    <br>
-    <input type="submit" value="Find Songs">
-  </form>
+  <h1>Songs by <?php echo $_GET["artist"]; ?></h1>
+  <ul>
+    <?php
+      $artistid = $db->prepare('SELECT artist_id FROM artist WHERE display_name = :name');
+      $artistid->bindParam(':name', $_GET["artist"]);
+      $stmt = $db->query('SELECT title FROM song WHERE display_name = :id');
+      $stmt->bindParam(':id', $artistid);
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+      {
+        echo '<li>' . $row[title] . '</li>';
+      }
+  ?>
+</ul>
 
 
   </body>
-
-
 
   <?php include('templates/footer.php') ?>
 
