@@ -33,10 +33,11 @@ catch (PDOException $ex)
   <ul>
     <?php
       $artistid = $db->prepare('SELECT artist_id FROM artist WHERE display_name = :name');
-      $artistid->bindParam(':name', $_GET["artist"]);
-      echo '<li>'$artistid'</li>';
+      $artistid->bindValue(':name', $_GET["artist"], PDO::PARAM_STR);
+      $artistid->execute();
       $stmt = $db->query('SELECT title FROM song WHERE display_name = :id');
-      $stmt->bindParam(':id', $artistid);
+      $stmt->bindValue(':id', $artistid, PDO::PARAM_STR);
+      $stmt->execute();
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
       {
         echo '<li>' . $row[title] . '</li>';
