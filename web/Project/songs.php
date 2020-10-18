@@ -35,7 +35,7 @@ catch (PDOException $ex)
       $artistid = $db->prepare('SELECT artist_id FROM artist WHERE display_name = :name');
       $artistid->bindValue(':name', $_GET["artist"], PDO::PARAM_STR);
       $artistid->execute();
-      $stmt = $db->query('SELECT title FROM song WHERE display_name = :id');
+      $stmt = $db->query('SELECT title FROM song WHERE artist_id = :id');
       $stmt->bindValue(':id', $artistid, PDO::PARAM_STR);
       $stmt->execute();
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
