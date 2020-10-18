@@ -46,3 +46,17 @@ CREATE TABLE fanlist (
   fanlist_id SERIAL NOT NULL PRIMARY KEY,
   artist_id INT NOT NULL REFERENCES artist(artist_id)
 );
+
+INSERT INTO artist (artist_id, display_name, password) VALUES (DEFAULT, 'Foo Fighters', 'p@ssW0rd');
+
+INSERT INTO artist (artist_id, display_name, password) VALUES (DEFAULT, 'Deftones', 'P@SSw0RD');
+
+INSERT INTO song (song_id, artist_id, title, special) VALUES (DEFAULT, 1, 'Monkey Wrench', 'Hit');
+
+INSERT INTO song (song_id, artist_id, title, special) VALUES (DEFAULT, 1, 'Everlong', 'Hit');
+
+INSERT INTO song (song_id, artist_id, title, special) VALUES (DEFAULT, 2, 'Rocket Skates', 'Encore');
+
+INSERT INTO song (song_id, artist_id, title, special) VALUES (DEFAULT, 2, 'Minerva', 'Hit');
+
+INSERT INTO fan (user_id, user_name, password) VALUES (DEFAULT, 'Jonny Sanchez', 'P@ssW0rd');
