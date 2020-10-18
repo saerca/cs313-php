@@ -39,7 +39,7 @@ catch (PDOException $ex)
       $stmt1->execute();
       $artistid = $stmt1->fetch(PDO::FETCH_ASSOC);
       $stmt2 = $db->prepare('SELECT title FROM song WHERE artist_id = :id');
-      $stmt2->bindValue(':id', $artistid, PDO::PARAM_INT);
+      $stmt2->bindValue(':id', $artistid[artist_id], PDO::PARAM_INT);
       $stmt2->execute();
       while ($row = $stmt2->fetch(PDO::FETCH_ASSOC))
       {
