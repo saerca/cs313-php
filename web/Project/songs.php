@@ -40,7 +40,7 @@ catch (PDOException $ex)
       $stmt = $db->prepare('SELECT title FROM song WHERE artist_id = :id');
       $stmt->bindValue(':id', $artistid, PDO::PARAM_STR);
       $stmt->execute();
-      while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+      while ($row = $stmt->fetchAll(PDO::FETCH_ASSOC))
       {
         echo '<li>' . $row[title] . '</li>';
       }
