@@ -38,9 +38,9 @@ catch (PDOException $ex)
       $artistid->bindValue(':name', $artist, PDO::PARAM_STR);
       $artistid->execute();
       $stmt = $db->prepare('SELECT title FROM song WHERE artist_id = :id');
-      $stmt->bindValue(':id', $artistid, PDO::PARAM_STR);
+      $stmt->bindValue(':id', $artistid, PDO::PARAM_INT);
       $stmt->execute();
-      while ($row = $stmt->fetchAll(PDO::FETCH_ASSOC))
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
       {
         echo '<li>' . $row[title] . '</li>';
       }
