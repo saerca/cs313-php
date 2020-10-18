@@ -1,5 +1,7 @@
 <?php
 
+$artist = $_GET['artist'];
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -29,13 +31,13 @@ catch (PDOException $ex)
 
   <?php include('templates/header.php') ?>
 
-  <h1>Songs by <?php echo $_GET["artist"]; ?></h1>
+  <h1>Songs by <?php echo $artist; ?></h1>
   <ul>
     <?php
       $artistid = $db->prepare('SELECT artist_id FROM artist WHERE display_name = :name');
-      $artistid->bindValue(':name', $_GET["artist"], PDO::PARAM_STR);
+      $artistid->bindValue(':name', $artist, PDO::PARAM_STR);
       $artistid->execute();
-      $stmt = $db->query('SELECT title FROM song WHERE artist_id = :id');
+      $stmt = $db->prepare('SELECT title FROM song WHERE artist_id = :id');
       $stmt->bindValue(':id', $artistid, PDO::PARAM_STR);
       $stmt->execute();
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
